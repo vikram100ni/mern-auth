@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/vikram100ni/mern-auth/issues"
   },
-  "homepage": "https://github.com/vikram100ni/mern-auth#readme"
+  "homepage": "https://github.com/vikram100ni/mern-auth#readme",
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
 }

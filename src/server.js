@@ -1,1 +1,0 @@
-console.log("welcome to new course");
