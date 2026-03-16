@@ -1,43 +1,51 @@
 {
-  "name": "auth-service",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "format:fix": "prettier . --write",
-    "format:check": "prettier . --check",
-    "dev": "node src/server.ts",
-    "lint:fix": "eslint . --fix",
-    "lint:check": "eslint . --check",
-    "prepare": "husky"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vikram100ni/mern-auth.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/vikram100ni/mern-auth/issues"
-  },
-  "homepage": "https://github.com/vikram100ni/mern-auth#readme",
-  "devDependencies": {
-    "@eslint/js": "^10.0.1",
-    "@types/node": "^25.5.0",
-    "eslint": "^10.0.3",
-    "husky": "^9.1.7",
-    "lint-staged": "^16.4.0",
-    "prettier": "3.8.1",
-    "typescript": "^5.9.3",
-    "typescript-eslint": "^8.57.1"
-  },
-  "lint-staged": {
-    "*.ts": [
-      "npm run format:fix",
-      "npm run lint:fix"
-    ]
-  }
+    "name": "auth-service",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "format:fix": "prettier . --write",
+        "format:check": "prettier . --check",
+        "dev": "nodemon --watch src --ext ts,js --exec \"node --loader ts-node/esm src/server.ts\"",
+        "lint:fix": "eslint . --fix",
+        "lint:check": "eslint . --check",
+        "prepare": "husky"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vikram100ni/mern-auth.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "module",
+    "bugs": {
+        "url": "https://github.com/vikram100ni/mern-auth/issues"
+    },
+    "homepage": "https://github.com/vikram100ni/mern-auth#readme",
+    "devDependencies": {
+        "@eslint/js": "^10.0.1",
+        "@types/express": "^5.0.6",
+        "@types/node": "^25.5.0",
+        "eslint": "^10.0.3",
+        "husky": "^9.1.7",
+        "lint-staged": "^16.4.0",
+        "nodemon": "^3.1.14",
+        "prettier": "3.8.1",
+        "ts-node": "^10.9.2",
+        "tsx": "^4.21.0",
+        "typescript": "^5.9.3",
+        "typescript-eslint": "^8.57.1"
+    },
+    "lint-staged": {
+        "*.ts": [
+            "npm run format:fix",
+            "npm run lint:fix"
+        ]
+    },
+    "dependencies": {
+        "dotenv": "^17.3.1",
+        "express": "^5.2.1"
+    }
 }
