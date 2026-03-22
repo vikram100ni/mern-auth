@@ -4,10 +4,10 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "test": "vitest",
         "format:fix": "prettier . --write",
         "format:check": "prettier . --check",
-        "dev": "nodemon --watch src --ext ts,js --exec \"node --loader ts-node/esm src/server.ts\"",
+        "dev": "nodemon --watch src --ext ts,js --exec \"tsx src/server.ts\"",
         "lint:fix": "eslint . --fix",
         "lint:check": "eslint . --check",
         "prepare": "husky"
@@ -27,16 +27,24 @@
     "devDependencies": {
         "@eslint/js": "^10.0.1",
         "@types/express": "^5.0.6",
+        "@types/http-errors": "^2.0.5",
+        "@types/jest": "^30.0.0",
         "@types/node": "^25.5.0",
+        "@types/supertest": "^7.2.0",
+        "@types/winston": "^2.4.4",
         "eslint": "^10.0.3",
         "husky": "^9.1.7",
+        "jest": "^30.3.0",
         "lint-staged": "^16.4.0",
         "nodemon": "^3.1.14",
         "prettier": "3.8.1",
+        "supertest": "^7.2.2",
+        "ts-jest": "^29.4.6",
         "ts-node": "^10.9.2",
         "tsx": "^4.21.0",
         "typescript": "^5.9.3",
-        "typescript-eslint": "^8.57.1"
+        "typescript-eslint": "^8.57.1",
+        "vitest": "^4.1.0"
     },
     "lint-staged": {
         "*.ts": [
@@ -46,6 +54,8 @@
     },
     "dependencies": {
         "dotenv": "^17.3.1",
-        "express": "^5.2.1"
+        "express": "^5.2.1",
+        "http-errors": "^2.0.1",
+        "winston": "^3.19.0"
     }
 }

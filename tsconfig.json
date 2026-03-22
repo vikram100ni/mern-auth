@@ -4,15 +4,18 @@
         // File Layout
         "rootDir": "./src",
         "outDir": "./dist",
-
+        "esModuleInterop": true,
+        "moduleResolution": "NodeNext",
         // Environment Settings
         // See also https://aka.ms/tsconfig/module
         "module": "nodenext",
         "target": "esnext",
-        "types": [],
+
+        // "types": [],
         // For nodejs:
         // "lib": ["esnext"],
-        // "types": ["node"],
+        "types": ["node", "jest"],
+
         // and npm install -D @types/node
 
         // Other Outputs
@@ -40,5 +43,13 @@
         "noUncheckedSideEffectImports": true,
         "moduleDetection": "force",
         "skipLibCheck": true
-    }
+    },
+    "include": [
+        "src",
+        "**/*.test.ts",
+        "**/*.spec.ts",
+        "jest.config.cjs",
+        "src/utils.js"
+    ],
+    "ignore": ["eslint.config.mjs"]
 }
