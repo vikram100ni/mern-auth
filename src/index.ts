@@ -1,5 +1,5 @@
 import 'reflect-metadata'
-import { AppDataSource } from './config/data-source.js'
+import { AppDataSource } from './data-source.js'
 import { User } from './entity/User.js'
 
 AppDataSource.initialize()
