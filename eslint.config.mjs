@@ -1,24 +1,30 @@
-// @ts-check
-
-import eslint from '@eslint/js'
-import { defineConfig } from 'eslint/config'
+import js from '@eslint/js'
 import tseslint from 'typescript-eslint'
+import globals from 'globals'
 
-export default defineConfig(
-    eslint.configs.recommended,
-    tseslint.configs.recommendedTypeChecked,
+export default tseslint.config(
     {
         ignores: [
-            'dist',
-            'node_modules',
-            'coverage', // <-- add this
+            'dist/**',
+            'coverage/**',
+            'node_modules/**',
             'eslint.config.mjs',
         ],
     },
+    js.configs.recommended,
+    ...tseslint.configs.recommendedTypeChecked.map((config) => ({
+        ...config,
+        files: ['**/*.ts'],
+    })),
     {
+        files: ['**/*.ts'],
         languageOptions: {
             parserOptions: {
-                projectService: true,
+                project: './tsconfig.json',
+                tsconfigRootDir: import.meta.dirname,
+            },
+            globals: {
+                ...globals.node,
             },
         },
     },
