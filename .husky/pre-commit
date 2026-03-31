@@ -1,1 +1,20 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+nvm use 24 >/dev/null
+
+echo "HOOK SHELL: $SHELL"
+echo "HOOK PATH: $PATH"
+which node
+node -v
+node -e "const u=require('node:util'); console.log(typeof u.styleText)"
+pwd
+
 npx lint-staged
+
+
+
+
