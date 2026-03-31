@@ -1,10 +1,10 @@
 import { config } from 'dotenv'
-config({ quiet: true })
+import path from 'path'
+config({ path: path.join(__dirname, `../../.env.${process.env.NODE_ENV}`) })
 
-config()
-
-const PORT = Number(process.env.PORT) || 5000
+const { PORT, NODE_ENV } = process.env
 
 export const Config = {
     PORT,
+    NODE_ENV,
 }
