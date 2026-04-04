@@ -8,6 +8,7 @@
         // Environment Settings
         // See also https://aka.ms/tsconfig/module
         "module": "nodenext",
+        "moduleResolution": "NodeNext",
         "target": "esnext",
 
         // "types": [],
@@ -25,6 +26,7 @@
         // Stricter Typechecking Options
         "noUncheckedIndexedAccess": true,
         "exactOptionalPropertyTypes": true,
+        "strictPropertyInitialization": false,
 
         // Style Options
         // "noImplicitReturns": true,
